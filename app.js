@@ -12,7 +12,7 @@ class App{
         this.loadingBar = new LoadingBar();
         this.loadingBar.visible = false;
 
-		this.assetsPath = './onlineshoppingWebXR/assets/';
+		this.assetsPath = './assets/';
         
 		this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
 		this.camera.position.set( 0, 1.6, 0 );
@@ -109,7 +109,7 @@ class App{
 	showChair(id){
         this.initAR();
         
-		const loader = new GLTFLoader( ).setPath(this.assetsPath);
+	const loader = new GLTFLoader( ).setPath(this.assetsPath);
         const self = this;
         
         this.loadingBar.visible = true;
@@ -121,7 +121,7 @@ class App{
 			// called when the resource is loaded
 			function ( gltf ) {
 
-				self.scene.add( gltf.scene );
+		self.scene.add( gltf.scene );
                 self.chair = gltf.scene;
         
                 self.chair.visible = false; 

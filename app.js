@@ -215,6 +215,8 @@ class App{
             self.renderer.xr.setSession( session );
        
             currentSession = session;
+	    self.ui.mesh.position.set( 0, 1, -1 );
+            self.scene.add( self.ui.mesh );
             
         }
 
@@ -230,6 +232,7 @@ class App{
             }
             
             self.renderer.setAnimationLoop( null );
+	    self.scene.remove( self.ui.mesh );
 
         }
 
@@ -300,6 +303,7 @@ class App{
         }
 
         this.renderer.render( this.scene, this.camera );
+	this.ui.update();
 
     }
 }

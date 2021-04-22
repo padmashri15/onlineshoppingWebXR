@@ -215,7 +215,7 @@ class App{
             self.renderer.xr.setSession( session );
        
             currentSession = session;
-	    self.ui.mesh.position.set( 0, 1, -1 );
+	    self.ui.mesh.position.set( 0, 1, -3 );
             self.scene.add( self.ui.mesh );
             
         }

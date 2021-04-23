@@ -55,9 +55,11 @@ class App{
             const msg = "Prev pressed";
             console.log(msg);
             self.ui.updateElement( "info", msg );
+	    self.currentSession.end();
+		
         }
         
-        function onStop(){
+       /* function onStop(){
             const msg = "Stop pressed";
             console.log(msg);
             self.ui.updateElement( "info", msg );
@@ -73,24 +75,25 @@ class App{
             const msg = "Continue pressed";
             console.log(msg);
             self.ui.updateElement( "info", msg );
-        }
+        }*/
         
         const config = {
             panelSize: { width: 2, height: 0.5 },
             height: 128,
-            info: { type: "text", position:{ left: 6, top: 6 }, width: 500, height: 58, backgroundColor: "#aaa", fontColor: "#000" },
+            //info: { type: "text", position:{ left: 6, top: 6 }, width: 500, height: 58, backgroundColor: "#aaa", fontColor: "#000" },
             prev: { type: "button", position:{ top: 64, left: 0 }, width: 64, fontColor: "#bb0", hover: "#ff0", onSelect: onPrev },
-            stop: { type: "button", position:{ top: 64, left: 64 }, width: 64, fontColor: "#bb0", hover: "#ff0", onSelect: onStop },
-            next: { type: "button", position:{ top: 64, left: 128 }, width: 64, fontColor: "#bb0", hover: "#ff0", onSelect: onNext },
-            continue: { type: "button", position:{ top: 70, right: 10 }, width: 200, height: 52, fontColor: "#fff", backgroundColor: "#1bf", hover: "#3df", onSelect: onContinue },
+            // stop: { type: "button", position:{ top: 64, left: 64 }, width: 64, fontColor: "#bb0", hover: "#ff0", onSelect: onStop },
+            //next: { type: "button", position:{ top: 64, left: 128 }, width: 64, fontColor: "#bb0", hover: "#ff0", onSelect: onNext },
+            // continue: { type: "button", position:{ top: 70, right: 10 }, width: 200, height: 52, fontColor: "#fff", backgroundColor: "#1bf", hover: "#3df", onSelect: onContinue },
             renderer: this.renderer
         }
         const content = {
-            info: "",
-            prev: "<path>M 10 32 L 54 10 L 54 54 Z</path>",
-            stop: "<path>M 50 15 L 15 15 L 15 50 L 50 50 Z<path>",
-            next: "<path>M 54 32 L 10 10 L 10 54 Z</path>",
-            continue: "Continue"
+            //info: "",
+            //prev: "<path>M 10 32 L 54 10 L 54 54 Z</path>",
+            //stop: "<path>M 50 15 L 15 15 L 15 50 L 50 50 Z<path>",
+           // next: "<path>M 54 32 L 10 10 L 10 54 Z</path>",
+            //continue: "Continue"
+	    prev: "exit AR View",
         }
         this.ui = new CanvasUI( content, config );
     }

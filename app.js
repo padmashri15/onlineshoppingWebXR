@@ -21,15 +21,15 @@ class App{
 		this.scene = new THREE.Scene();
 
 		const ambient = new THREE.HemisphereLight(0xffffff, 0xbbbbff, 1);
-        ambient.position.set( 0.5, 1, 0.25 );
+        	ambient.position.set( 0.5, 1, 0.25 );
 		this.scene.add(ambient);
 			
 		this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true } );
 		this.renderer.setPixelRatio( window.devicePixelRatio );
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
-        this.renderer.outputEncoding = THREE.sRGBEncoding;
+      		this.renderer.outputEncoding = THREE.sRGBEncoding;
 		container.appendChild( this.renderer.domElement );
-        this.setEnvironment();
+       		this.setEnvironment();
         
         this.reticle = new THREE.Mesh(
             new THREE.RingBufferGeometry( 0.15, 0.2, 32 ).rotateX( - Math.PI / 2 ),
@@ -53,7 +53,8 @@ class App{
         
        	function onPrev() {
        	const session = self.renderer.xr.getSession();
-      	 session.end();
+      	session.end();
+	window.location.reload();
       	 }
   
         
